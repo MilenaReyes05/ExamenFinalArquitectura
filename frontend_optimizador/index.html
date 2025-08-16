@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Optimizador de Portafolio (Knapsack)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Optimizador de Portafolio</h1>
+    <p>Frontend minimal (HTML + CSS + JS) para consumir <code>POST /optimizar</code> del backend FastAPI.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Configuración</h2>
+      <div class="row">
+        <label for="apiBase">API Base URL:</label>
+        <input id="apiBase" type="text" value="http://127.0.0.1:8000" />
+        <button id="btnDocs" type="button" class="secondary">Abrir Swagger</button>
+      </div>
+      <div class="row">
+        <label for="capacidad">Capacidad (presupuesto):</label>
+        <input id="capacidad" type="number" min="0" step="1" value="10000" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Objetos (nombre, peso, ganancia)</h2>
+      <table id="tablaObjetos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Peso</th>
+            <th>Ganancia</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="objetosBody">
+          <!-- Filas dinámicas -->
+        </tbody>
+      </table>
+      <div class="actions">
+        <button id="agregarFila" type="button">+ Agregar fila</button>
+        <button id="limpiar" type="button" class="secondary">Limpiar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="actions">
+        <button id="optimizar" type="button" class="primary">Optimizar</button>
+      </div>
+      <pre id="estado" class="estado"></pre>
+    </section>
+
+    <section id="resultados" class="card hidden">
+      <h2>Resultados</h2>
+      <div class="grid">
+        <div class="kpi"><span>Ganancia total</span><strong id="gananciaTotal">0</strong></div>
+        <div class="kpi"><span>Peso total</span><strong id="pesoTotal">0</strong></div>
+      </div>
+
+      <h3>Seleccionados</h3>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Nombre</th></tr>
+        </thead>
+        <tbody id="seleccionadosBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 Optimizador | <a id="enlaceOpenApi" href="#" target="_blank" rel="noopener">OpenAPI</a></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -26,6 +26,7 @@ uvicorn app.main:app --reload
 - Swagger UI: http://127.0.0.1:8000/docs  
 - OpenAPI JSON: http://127.0.0.1:8000/openapi.json
 - ReDoc: http://127.0.0.1:8000/redoc
+- frontend: entrar a la ruta /frontend_optimizador y abrir el archivo index.html
 
 ## 🧪 Pruebas
 ```bash
@@ -81,6 +82,7 @@ optimizador_portafolio/
 │  ├─ schemas.py
 │  ├─ models.py
 │  └─ main.py
+├─ frontend_optimizador/
 ├─ tests/
 │  ├─ test_api.py
 │  └─ test_service.py
